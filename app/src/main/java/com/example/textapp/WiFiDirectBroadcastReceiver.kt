@@ -4,13 +4,12 @@ import android.net.wifi.p2p.WifiP2pManager
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.widget.TextView
 
 /**
  * A BroadcastReceiver that notifies of important Wi-Fi p2p events.
  */
 class WiFiDirectBroadcastReceiver(
-    private val manager: WifiP2pManager,
+    private val manager: WifiP2pManager?,
     private val channel: WifiP2pManager.Channel,
     private val activity: MainActivity
 ) : BroadcastReceiver()  {
@@ -19,10 +18,11 @@ class WiFiDirectBroadcastReceiver(
         val action: String = intent.action
         when (action) {
             WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION -> {
-                    val state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1)
-                    if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
-                    } else {
-                    }
+                val state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1)
+                if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
+
+                } else {
+                }
             }
             WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION -> {
                 // Call WifiP2pManager.requestPeers() to get a list of current peers
