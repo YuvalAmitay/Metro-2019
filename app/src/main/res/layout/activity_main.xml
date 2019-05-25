@@ -6,5 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+    <TextView
+            android:id="@+id/debug"
+            android:text="SOMETEXT"
+            android:layout_width="25dp"
+            android:layout_height="11dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="80dp"
+            android:textSize="80dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="30dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="80dp"
+            app:layout_constraintHorizontal_bias="10" app:layout_constraintVertical_bias="10"/>
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
